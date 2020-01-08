@@ -11,13 +11,15 @@ import SwiftyJSON
 import Alamofire
 import MapKit
 
-class ViewController: UIViewController, CLLocationManagerDelegate {
+class ViewController: UIViewController, CLLocationManagerDelegate, UISearchBarDelegate {
     
     private let dataManager = DataManager(baseURL: API.baseURLString)
     
     @IBOutlet weak var mainDegrees: UILabel!
     @IBOutlet weak var mainDesc: UILabel!
     @IBOutlet weak var cityName: UILabel!
+    @IBOutlet weak var hourlyDescription: UILabel!
+    @IBOutlet weak var searchBar: UISearchBar!
     
     let emojiIcons = emojiDict()
     let locationManager = CLLocationManager()
@@ -25,14 +27,31 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
     var reverseCoordinates = CLcoordinates(longitude: 0, latitude: 0)
     var cityNameAccessed : String = "Default"
     
+    var resultSearchController : UISearchController? = nil
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view
+        
+        searchBar.showsCancelButton = true
+        searchBar.delegate = self
+        
+        let locationSearchTable = storyboard!.instantiateViewController(withIdentifier: "LocationSearchTable") as! LocationSearchTable
+        resultSearchController = UISearchController(searchResultsController: locationSearchTable)
+        resultSearchController?.searchResultsUpdater = locationSearchTable
         locationManager.requestWhenInUseAuthorization()
         if( CLLocationManager.authorizationStatus() == .authorizedWhenInUse ||
                 CLLocationManager.authorizationStatus() ==  .authorizedAlways){
                     currentLocation = locationManager.location
         }
+        
+        let searchBar = resultSearchController!.searchBar
+        searchBar.sizeToFit()
+        navigationItem.titleView = resultSearchController?.searchBar
+        
+        resultSearchController?.hidesNavigationBarDuringPresentation = false
+        resultSearchController?.dimsBackgroundDuringPresentation = true
+        definesPresentationContext = true
         
         dataManager.getWeather(latitude: currentLocation.coordinate.latitude, longitude: currentLocation.coordinate.longitude, units: "si", completion: {
             response in
@@ -41,6 +60,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
                 //print(value)
                 self.mainDegrees.text = String(Int(value.currently.temperature)) + " °C"
                 self.mainDesc.text = value.currently.summary + " " + self.emojiIcons.emojis[value.currently.icon]!
+                self.hourlyDescription.text = value.hourly.summary
                case .failure(let error):
                 print(error)
             }
@@ -62,5 +82,4 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
            })
         
         }
-    
     }

@@ -12,6 +12,7 @@ import SwiftyJSON
 struct Weather: Codable {
   let timezone: String
   let currently: Currently
+  let hourly: Hourly
 
   struct Currently: Codable {
     let summary: String
@@ -23,6 +24,10 @@ struct Weather: Codable {
     let uvIndex: Int
     let visibility, ozone: Double
   }
+    
+  struct Hourly: Codable {
+    let summary: String
+    }
 }
 
 
