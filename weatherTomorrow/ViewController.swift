@@ -58,6 +58,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate, UISearchBarDe
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        view.addBackground(contentMode: .center)
         checkLocationServices()
         
         //Zoom to user location
