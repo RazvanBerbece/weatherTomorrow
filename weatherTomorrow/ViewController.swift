@@ -87,7 +87,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate, UISearchBarDe
             case .success(let value):
                 //print(value)
                 self.mainDegrees.text = String(Int(value.currently.temperature)) + " °C"
-                self.mainDesc.text = value.currently.summary + " " + self.emojiIcons.emojis[value.currently.icon]!
+                self.mainDesc.text = self.emojiIcons.emojis[value.currently.icon]! + " " + value.currently.summary + " " + self.emojiIcons.emojis[value.currently.icon]!
                 self.hourlyDescription.text = value.hourly.summary
             case .failure(let error):
                 print(error)
