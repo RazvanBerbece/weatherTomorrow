@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="D30-pZ-3Fp">
     <device id="retina5_9" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15510"/>
@@ -54,66 +54,68 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" showsUserLocation="YES" translatesAutoresizingMaskIntoConstraints="NO" id="eG4-M9-yCp">
+                                <rect key="frame" x="0.0" y="570" width="375" height="176"/>
+                                <connections>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="tiR-Pn-B4c"/>
+                                </connections>
+                            </mapView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="  weatherTomorrow" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zXR-qI-wfQ">
-                                <rect key="frame" x="0.0" y="160" width="375" height="15"/>
+                                <rect key="frame" x="0.0" y="132" width="375" height="53"/>
                                 <fontDescription key="fontDescription" name="Rockwell-Regular" family="Rockwell" pointSize="32"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <searchBar contentMode="redraw" searchBarStyle="minimal" placeholder="Search for location here ..." showsCancelButton="YES" translatesAutoresizingMaskIntoConstraints="NO" id="f4I-ZF-mup">
-                                <rect key="frame" x="0.0" y="88" width="375" height="56"/>
-                                <offsetWrapper key="searchTextPositionAdjustment" horizontal="0.0" vertical="0.0"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </searchBar>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="zXR-qI-wfQ" firstAttribute="leading" secondItem="5hV-9J-h3d" secondAttribute="leading" id="07Z-ch-TLA"/>
-                            <constraint firstItem="f4I-ZF-mup" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="2aX-Qt-zDB"/>
-                            <constraint firstItem="f4I-ZF-mup" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="42X-36-yRl"/>
-                            <constraint firstItem="f4I-ZF-mup" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="HTk-Vm-ncv"/>
+                            <constraint firstItem="zXR-qI-wfQ" firstAttribute="trailing" secondItem="qLK-Rm-sPW" secondAttribute="trailing" id="2Gb-no-g8v"/>
+                            <constraint firstItem="zXR-qI-wfQ" firstAttribute="trailing" secondItem="5hV-9J-h3d" secondAttribute="trailing" id="CJE-GC-iZ0"/>
+                            <constraint firstItem="5hV-9J-h3d" firstAttribute="top" secondItem="zXR-qI-wfQ" secondAttribute="bottom" constant="28" id="ICQ-Lc-NF2"/>
                             <constraint firstItem="RT5-jm-IiX" firstAttribute="top" secondItem="5hV-9J-h3d" secondAttribute="bottom" constant="8" id="IsW-PK-FC7"/>
                             <constraint firstItem="RT5-jm-IiX" firstAttribute="leading" secondItem="5hV-9J-h3d" secondAttribute="leading" id="KPA-Rs-OJP"/>
-                            <constraint firstItem="zXR-qI-wfQ" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="72" id="O8j-VS-usT"/>
+                            <constraint firstItem="zXR-qI-wfQ" firstAttribute="leading" secondItem="P75-Vd-WRf" secondAttribute="leading" id="Nk9-R6-cLf"/>
                             <constraint firstItem="qLK-Rm-sPW" firstAttribute="top" secondItem="Rgz-AC-mh8" secondAttribute="bottom" constant="99" id="PCb-HS-Fnq"/>
                             <constraint firstItem="qLK-Rm-sPW" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="Q5F-i3-aei"/>
+                            <constraint firstItem="zXR-qI-wfQ" firstAttribute="leading" secondItem="qLK-Rm-sPW" secondAttribute="leading" id="RPc-2o-3bV"/>
+                            <constraint firstItem="eG4-M9-yCp" firstAttribute="trailing" secondItem="qLK-Rm-sPW" secondAttribute="trailing" id="RV4-vU-5Lk"/>
+                            <constraint firstItem="zXR-qI-wfQ" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="44" id="Tal-pp-Hzv"/>
                             <constraint firstItem="5hV-9J-h3d" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" constant="213" id="V3I-fL-pMI"/>
-                            <constraint firstItem="zXR-qI-wfQ" firstAttribute="leading" secondItem="P75-Vd-WRf" secondAttribute="leading" id="VLs-c7-ruO"/>
-                            <constraint firstItem="zXR-qI-wfQ" firstAttribute="trailing" secondItem="5hV-9J-h3d" secondAttribute="trailing" id="X4s-gp-4Ut"/>
+                            <constraint firstItem="eG4-M9-yCp" firstAttribute="leading" secondItem="qLK-Rm-sPW" secondAttribute="leading" id="YK7-50-E3i"/>
                             <constraint firstItem="Rgz-AC-mh8" firstAttribute="top" secondItem="RT5-jm-IiX" secondAttribute="bottom" constant="8" id="aSu-rY-FnJ"/>
                             <constraint firstItem="P75-Vd-WRf" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="topMargin" constant="-44" id="eEw-be-xSj"/>
-                            <constraint firstItem="zXR-qI-wfQ" firstAttribute="top" secondItem="f4I-ZF-mup" secondAttribute="bottom" constant="16" id="feV-vu-gwe"/>
                             <constraint firstItem="RT5-jm-IiX" firstAttribute="trailing" secondItem="5hV-9J-h3d" secondAttribute="trailing" id="gRf-p5-DnQ"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="qLK-Rm-sPW" secondAttribute="bottom" constant="232" id="hVi-6L-9Ek"/>
-                            <constraint firstItem="5hV-9J-h3d" firstAttribute="top" secondItem="zXR-qI-wfQ" secondAttribute="bottom" constant="38" id="ibD-iz-lQ3"/>
                             <constraint firstItem="Rgz-AC-mh8" firstAttribute="trailing" secondItem="P75-Vd-WRf" secondAttribute="trailing" id="jxe-Wq-2TR"/>
+                            <constraint firstItem="eG4-M9-yCp" firstAttribute="top" secondItem="qLK-Rm-sPW" secondAttribute="bottom" constant="24" id="k8X-w5-MAA"/>
                             <constraint firstItem="Rgz-AC-mh8" firstAttribute="leading" secondItem="RT5-jm-IiX" secondAttribute="leading" id="oYO-Mh-E1h"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="Rgz-AC-mh8" secondAttribute="bottom" constant="361" id="qRn-Xe-X5e"/>
-                            <constraint firstItem="zXR-qI-wfQ" firstAttribute="leading" secondItem="qLK-Rm-sPW" secondAttribute="leading" id="rNj-fH-Hbu"/>
-                            <constraint firstItem="zXR-qI-wfQ" firstAttribute="trailing" secondItem="qLK-Rm-sPW" secondAttribute="trailing" id="sA2-At-nTj"/>
                             <constraint firstItem="qLK-Rm-sPW" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="vTa-C5-jxz"/>
                             <constraint firstItem="Rgz-AC-mh8" firstAttribute="trailing" secondItem="RT5-jm-IiX" secondAttribute="trailing" id="vZP-ix-aIc"/>
                             <constraint firstItem="RT5-jm-IiX" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" constant="281" id="xUH-Lz-XqB"/>
+                            <constraint firstItem="zXR-qI-wfQ" firstAttribute="leading" secondItem="5hV-9J-h3d" secondAttribute="leading" id="y5i-38-18E"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="eG4-M9-yCp" secondAttribute="bottom" constant="32" id="yB9-HR-nEw"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <navigationItem key="navigationItem" id="Fvo-BS-BQW"/>
                     <connections>
+                        <outlet property="background" destination="P75-Vd-WRf" id="dMK-1y-bDK"/>
                         <outlet property="cityName" destination="5hV-9J-h3d" id="bbr-65-qY6"/>
                         <outlet property="hourlyDescription" destination="qLK-Rm-sPW" id="H3e-zY-6zR"/>
                         <outlet property="mainDegrees" destination="RT5-jm-IiX" id="I8r-Cy-nLp"/>
                         <outlet property="mainDesc" destination="Rgz-AC-mh8" id="xTT-EE-xel"/>
-                        <outlet property="searchBar" destination="f4I-ZF-mup" id="QHm-dI-25Z"/>
+                        <outlet property="mapView" destination="eG4-M9-yCp" id="Ljf-WZ-ANU"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2008.8" y="136.69950738916256"/>
+            <point key="canvasLocation" x="2951.1999999999998" y="136.69950738916256"/>
         </scene>
         <!--Location Search Table-->
         <scene sceneID="zGU-ra-4ez">
             <objects>
-                <tableViewController storyboardIdentifier="LocationSearchTable" id="nlt-I9-83i" customClass="LocationSearchTable" customModule="weatherTomorrow" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="LocationSearchTable" id="nlt-I9-83i" customClass="LocationSearchTable" customModule="weatherTomorrow" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="yRd-ha-X2o">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -152,25 +154,25 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NJA-q7-7Gz" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2783.1999999999998" y="136.69950738916256"/>
+            <point key="canvasLocation" x="3725.5999999999999" y="136.69950738916256"/>
         </scene>
         <!--Navigation Controller-->
-        <scene sceneID="ar7-7N-y4N">
+        <scene sceneID="em8-8f-FnL">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="zFd-Pc-UIh" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="D30-pZ-3Fp" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="rtK-Ux-sQR">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="OFS-Fp-Qzq">
                         <rect key="frame" x="0.0" y="44" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="te5-yp-9R0"/>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="1eM-0U-dYf"/>
                     </connections>
                 </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="K3x-ZX-gg4" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Qa3-xF-njz" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1066.4000000000001" y="136.69950738916256"/>
+            <point key="canvasLocation" x="2008.8" y="136.69950738916256"/>
         </scene>
     </scenes>
     <resources>

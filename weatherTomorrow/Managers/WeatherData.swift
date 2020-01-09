@@ -10,23 +10,23 @@ import Foundation
 import SwiftyJSON
 
 struct Weather: Codable {
-  let timezone: String
-  let currently: Currently
-  let hourly: Hourly
-
-  struct Currently: Codable {
-    let summary: String
-    let icon: String
-    let temperature, apparentTemperature, dewPoint, humidity: Double
-    let pressure, windSpeed, windGust: Double
-    let windBearing: Int
-    let cloudCover: Double
-    let uvIndex: Int
-    let visibility, ozone: Double
-  }
+    let timezone: String
+    let currently: Currently
+    let hourly: Hourly
     
-  struct Hourly: Codable {
-    let summary: String
+    struct Currently: Codable {
+        let summary: String
+        let icon: String
+        let temperature, apparentTemperature, dewPoint, humidity: Double
+        let pressure, windSpeed, windGust: Double
+        let windBearing: Int
+        let cloudCover: Double
+        let uvIndex: Int
+        let visibility, ozone: Double
+    }
+    
+    struct Hourly: Codable {
+        let summary: String
     }
 }
 
